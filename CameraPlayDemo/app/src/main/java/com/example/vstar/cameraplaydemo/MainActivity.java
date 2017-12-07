@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private MainAdapter mainViewAdapter;
     private ArrayList<String> currentMapValue;
     private String[] listStrAry=new String[]{
-            "相机预览---GLSurfaceView+SurfaceTexture",
-            "GLSurfaceView基本操作",
-            "GLSurfaceView绘制正方形"
+            "相机预览---GLSurfaceView+Renderer+SurfaceTexture",
+            "基本操作---GLSurfaceView+Renderer",
+            "绘制正方形---GLSurfaceView+Renderer",
+            "解码播放---GLSurfaceView+Renderer+SurfaceTexture+Surface"
     };
 
     @Override
@@ -55,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         Intent GLDrawActivity = new Intent(MainActivity.this, GLSurfaceViewDrawActivity.class);
                         startActivity(GLDrawActivity);
+                        break;
+                    case 3:
+                        Intent GLDecoderActivity = new Intent(MainActivity.this, DecoderGLSurfaceActivity.class);
+                        startActivity(GLDecoderActivity);
                         break;
                     default:
                         break;
