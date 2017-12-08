@@ -11,6 +11,25 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    sourceSets {
+        main {
+            //在自己的jni目录编写jni代码后，再将项目的jni目录指向自己的Jni目录
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
+            //jni.srcDirs = []  //设置禁止gradle生成Android.mk
+            //jniLibs.srcDirs=['libs']
+            //拷贝第三方so到自己的jniLibs目录中,再将项目jniLibs目录指向自己的jniLibs目录
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
+    externalNativeBuild{
+        ndkBuild{
+            path file("src\\main\\jni\\Android.mk")
+            //path file("src\\main\\jni\\Application.mk")
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

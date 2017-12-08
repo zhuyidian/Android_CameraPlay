@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
     private String[] listStrAry=new String[]{
             "相机预览---GLSurfaceView+Renderer+SurfaceTexture",
             "基本操作---GLSurfaceView+Renderer",
-            "绘制正方形---GLSurfaceView+Renderer",
-            "解码播放---GLSurfaceView+Renderer+SurfaceTexture+Surface"
+            "绘制正方形---GLSurfaceView+Renderer(带有详细注释)",
+            "解码播放---GLSurfaceView+Renderer+SurfaceTexture+Surface",
+            "相机预览左边SurfaceView,右边GLSurfaceView+Renderer",
+            "异步线程绘图---SurfaceView",
+            "mediaplayer播放视频---SurfaceView",
+            "mediaplayer播放视频完整版---SurfaceView",
+            "在相机预览SurfaceView上面再次创建SurfaceView绘图"
     };
 
     @Override
@@ -60,6 +65,26 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                         Intent GLDecoderActivity = new Intent(MainActivity.this, DecoderGLSurfaceActivity.class);
                         startActivity(GLDecoderActivity);
+                        break;
+                    case 4:
+                        Intent CameraEngineActivityIntent = new Intent(MainActivity.this, CameraEngineActivity.class);
+                        startActivity(CameraEngineActivityIntent);
+                        break;
+                    case 5:
+                        Intent SurfaceViewDrawActivityIntent = new Intent(MainActivity.this, SurfaceViewDrawActivity.class);
+                        startActivity(SurfaceViewDrawActivityIntent);
+                        break;
+                    case 6:
+                        Intent MediaPlayerActivityIntent = new Intent(MainActivity.this, MediaPlayerActivity.class);
+                        startActivity(MediaPlayerActivityIntent);
+                        break;
+                    case 7:
+                        Intent MediaPlayer1ActivityIntent = new Intent(MainActivity.this, MediaPlayer1Activity.class);
+                        startActivity(MediaPlayer1ActivityIntent);
+                        break;
+                    case 8:
+                        Intent CameraSurfaceAndDrawSurfaceActivityIntent = new Intent(MainActivity.this, CameraSurfaceAndDrawSurfaceActivity.class);
+                        startActivity(CameraSurfaceAndDrawSurfaceActivityIntent);
                         break;
                     default:
                         break;
