@@ -17,6 +17,7 @@ import android.view.SurfaceView;
 import android.widget.Toast;
 
 import com.example.vstar.cameraplaydemo.CameraEngineActivity;
+import com.example.vstar.cameraplaydemo.ndk.ImageUtilEngine;
 
 import java.util.List;
 
@@ -113,7 +114,7 @@ public boolean ttt1 = false;
                     }
 
                     long start = System.currentTimeMillis();
-                    int[] buf = CameraEngineActivity.getImageEngine().decodeYUV420SP(data, mWidth, mHeight);
+                    int[] buf = ImageUtilEngine.decodeYUV420SP(data, mWidth, mHeight);
                     start = System.currentTimeMillis() - start;
                     start = System.currentTimeMillis();
                     CameraEngineActivity.getRender().mFrameBuf = buf;
@@ -158,7 +159,7 @@ public boolean ttt1 = false;
         public void processData(){
             synchronized (INSTANCE_LOCK){
                 
-                int[] buf = CameraEngineActivity.getImageEngine().decodeYUV420SP(mTempData, mWidth, mHeight);
+                int[] buf = ImageUtilEngine.decodeYUV420SP(mTempData, mWidth, mHeight);
               CameraEngineActivity.getRender().update(buf, mWidth, mHeight);
             }
         }
@@ -299,7 +300,7 @@ public boolean ttt1 = false;
                             .show();
                         }
                         long start = System.currentTimeMillis();
-                        int[] buf = CameraEngineActivity.getImageEngine().decodeYUV420SP(data, mWidth, mHeight);
+                        int[] buf = ImageUtilEngine.decodeYUV420SP(data, mWidth, mHeight);
                         start = System.currentTimeMillis() - start;
 
                         start = System.currentTimeMillis();

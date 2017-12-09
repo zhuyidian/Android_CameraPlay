@@ -15,28 +15,32 @@
 
 
 #LOCAL_PATH := $(call my-dir)
-
 #include $(CLEAR_VARS)
-
 #LOCAL_SRC_FILES:= \com_spore_jni_ImageUtilEngine.c
 #LOCAL_C_INCLUDES := \ $(JNI_H_INCLUDE)
 #LOCAL_SHARED_LIBRARIES := libutils
 #LOCAL_PRELINK_MODULE := false
 #LOCAL_MODULE := libJNITest
 #LOCAL_LDLIBS    :=  -llog -ljnigraphics
-
 #include $(BUILD_SHARED_LIBRARY)
 
 
 LOCAL_PATH := $(call my-dir)
-
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := EncodeJni
+
 LOCAL_SRC_FILES := com_spore_jni_ImageUtilEngine.c \
                    decoderNDK.c \
-                   EncodeNDK.cpp
+                   EncodeNDK.cpp \
+                   render.c \
+                   opengles_code.cpp
 LOCAL_C_INCLUDES := \ $(JNI_H_INCLUDE)
+
 LOCAL_LDLIBS    :=  -llog -ljnigraphics
+LOCAL_LDLIBS    +=  -lGLESv2
+
+# use GL ext model
+#LOCAL_CFLAGS += -DGL_GLEXT_PROTOTYPES
 
 include $(BUILD_SHARED_LIBRARY)

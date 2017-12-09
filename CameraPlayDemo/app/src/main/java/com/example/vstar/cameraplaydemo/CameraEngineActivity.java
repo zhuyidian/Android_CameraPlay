@@ -18,7 +18,7 @@ public class CameraEngineActivity extends Activity {
     GLSurfaceView mProcessView;
     LinearLayout mProcessView_Layout;
     static SporeRender mRender;
-    static ImageUtilEngine imageEngine;
+    //static ImageUtilEngine imageEngine;
     
     /** Called when the activity is first created. */
     @Override
@@ -27,10 +27,10 @@ public class CameraEngineActivity extends Activity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.video_panel);
         
-        imageEngine = new ImageUtilEngine();
+        //imageEngine = new ImageUtilEngine();
 
-        Log.e(TAG,"imageEngine---javaCallC="+imageEngine.javaCallC());
-        Log.e(TAG,"imageEngine---javaCallCC="+imageEngine.javaCallCC());
+        //Log.e(TAG,"imageEngine---javaCallC="+imageEngine.javaCallC());
+        //Log.e(TAG,"imageEngine---javaCallCC="+imageEngine.javaCallCC());
         
         mSelfView = (CameraView) findViewById(R.id.self_view);
         
@@ -45,7 +45,7 @@ public class CameraEngineActivity extends Activity {
         return mRender;
     }
     
-    public static ImageUtilEngine getImageEngine(){
-        return imageEngine;
-    }
+    //public static ImageUtilEngine getImageEngine(){
+     //   return imageEngine;
+    //}
 }

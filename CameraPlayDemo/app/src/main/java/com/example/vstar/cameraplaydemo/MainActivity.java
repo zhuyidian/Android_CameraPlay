@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
             "异步线程绘图---SurfaceView",
             "mediaplayer播放视频---SurfaceView",
             "mediaplayer播放视频完整版---SurfaceView",
-            "在相机预览SurfaceView上面再次创建SurfaceView绘图"
+            "在相机预览SurfaceView上面再次创建SurfaceView绘图",
+            "JNI---GLSurfaceView+Renderer",
+            "JNI---OpenGL ES 2.0---GLSurfaceView+Renderer"
     };
 
     @Override
@@ -85,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
                     case 8:
                         Intent CameraSurfaceAndDrawSurfaceActivityIntent = new Intent(MainActivity.this, CameraSurfaceAndDrawSurfaceActivity.class);
                         startActivity(CameraSurfaceAndDrawSurfaceActivityIntent);
+                        break;
+                    case 9:
+                        Intent JniGLSurfaceActivityIntent = new Intent(MainActivity.this, JniGLSurfaceActivity.class);
+                        startActivity(JniGLSurfaceActivityIntent);
+                        break;
+                    case 10:
+                        Intent FillTriangleActivityIntent = new Intent(MainActivity.this, FillTriangleActivity.class);
+                        startActivity(FillTriangleActivityIntent);
                         break;
                     default:
                         break;

@@ -55,6 +55,14 @@
             android:name="com.example.vstar.cameraplaydemo.CameraSurfaceAndDrawSurfaceActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.example.vstar.cameraplaydemo.JniGLSurfaceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.example.vstar.cameraplaydemo.FillTriangleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
     </application>
 
 </manifest>
